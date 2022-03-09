@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registrar_clase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".ui.registrarclase.RegistrarClaseFragment">
+
+
+    <ImageView
+        android:id="@+id/ivclase"
+        android:layout_width="121dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/imagen_clase"
+        android:src="@drawable/ic_clase2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_marginTop="135dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivcodigo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:contentDescription="@string/imagen_codigo"
+                    android:src="@drawable/ic_codigo"
+                    tools:ignore="ImageContrastCheck" />
+
+                <EditText
+                    android:id="@+id/txtCodigo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_weight="1"
+                    android:background="#D6B1D2D2"
+                    android:ems="10"
+                    android:hint="@string/codigo"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:importantForAutofill="no" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivnombre"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_nclase2"
+                    android:contentDescription="@string/imagen_nombre_clase" />
+
+                <EditText
+                    android:id="@+id/txtNombreClase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:background="#D6B1D2D2"
+                    android:ems="10"
+                    android:hint="@string/nombre_de_la_clase"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivseccion"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_seccion"
+                    android:contentDescription="@string/imagen_seccion" />
+
+                <EditText
+                    android:id="@+id/txtSeccion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:background="#D6B1D2D2"
+                    android:ems="10"
+                    android:hint="@string/secci_n"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivhora"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_hora"
+                    android:contentDescription="@string/imagen_hora" />
+
+                <EditText
+                    android:id="@+id/txtHora"
+                    android:layout_width="69dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginStart="3dp"
+                    android:inputType="number"
+                    android:hint="@string/hh"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:background="#D6B1D2D2"
+                    android:importantForAutofill="no" />
+
+                <EditText
+                    android:id="@+id/txtMinutos"
+                    android:layout_width="69dp"
+                    android:layout_marginEnd="9dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginStart="3dp"
+                    android:inputType="number"
+                    android:hint="@string/mm"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:background="#D6B1D2D2"
+                    android:importantForAutofill="no" />
+
+                <Spinner
+                    android:id="@+id/spnHora"
+                    android:layout_width="69dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="80dp"
+                    android:background="#D6B1D2D2"
+                    android:autofillHints="a.m."
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivedificio"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_edificio_aula"
+                    android:contentDescription="@string/imagen_edificio" />
+
+                <EditText
+                    android:id="@+id/txtEdificio"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:layout_marginStart="3dp"
+                    android:inputType="textPersonName"
+                    android:hint="@string/edificio_piso"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:background="#D6B1D2D2"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivaula"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_aula"
+                    android:contentDescription="@string/imagen_aula" />
+
+                <EditText
+                    android:id="@+id/txtAula"
+                    android:layout_width="wrap_content"
+                    android:layout_marginEnd="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:layout_marginStart="3dp"
+                    android:inputType="textPersonName"
+                    android:hint="@string/aula"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
+                    android:background="#D6B1D2D2"
+                    android:importantForAutofill="no" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRegistrarClase"
+                android:layout_width="196dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="115dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:drawableLeft="@drawable/ic_registrar_clase"
+                android:background="@drawable/custom_button_alumno"
+                android:text="@string/registrar_clase"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/ivbtnRegresarC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="?attr/homeAsUpIndicator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/boton_regresar_enviar_lista" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

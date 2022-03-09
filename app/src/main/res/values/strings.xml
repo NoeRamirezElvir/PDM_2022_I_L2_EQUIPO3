@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">PDM_2022_I_L2_EQUIPO3</string>
+    <string name="btn_registrar_alumno">Registrar Alumno</string>
+    <string name="iv_alumno1">imagen principal</string>
+    <string name="txtCorreoElectronico">Correo electrónico</string>
+    <string name="txtNumeroCuenta">Número de cuenta</string>
+    <string name="txtNombre">Nombre</string>
+    <string name="imagen_correo">imagen correo</string>
+    <string name="imagen_nombre">imagen nombre</string>
+    <string name="imagen_cuenta">imagen cuenta</string>
+    <string name="registrar_alumno">Registrar Alumno</string>
+    <string name="registrar_clase">Registrar Clase</string>
+    <string name="codigo">Código</string>
+    <string name="nombre_de_la_clase">Nombre de la clase</string>
+    <string name="secci_n">Sección</string>
+    <string name="hora">Hora</string>
+    <string name="edificio_piso">Edificio/Piso</string>
+    <string name="aula">Aula</string>
+    <string name="imagen_codigo">imagen codigo</string>
+    <string name="imagen_nombre_clase">imagen nombre clase</string>
+    <string name="imagen_seccion">imagen Seccion</string>
+    <string name="imagen_hora">imagen hora</string>
+    <string name="imagen_edificio">imagen edificio</string>
+    <string name="imagen_aula">imagen aula</string>
+    <string name="imagen_clase">imagen clase</string>
+    <string name="boton_regresar_enviar_lista">boton regresar/enviar lista</string>
+    <string name="imagen_regresar_enviar_listas">imagen regresar / enviar listas</string>
+    <string name="hh">HH</string>
+    <string name="mm">mm</string>
+    <string-array name="spinner">
+        <item>a.m.</item>
+        <item>p.m.</item>
+    </string-array>
+
+</resources>
