@@ -9,12 +9,14 @@ import hn.edu.ujcv.pdm_2022_i_l2_equipo3.MainActivity
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.R
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Alumno
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Clase
+import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Matricula
 import kotlinx.android.synthetic.main.registrar_alumno__fragment.*
 
 
 class RegistrarAlumnoViewModel : ViewModel() {
     var listaAlumnos = ArrayList<Alumno>()
     var listaClases:ArrayList<Clase>? = ArrayList()
+    var listaMatricula:ArrayList<Matricula>? = ArrayList()
 
     fun registrarAlumno(fragment: RegistrarAlumnoFragment){
         val cuenta = fragment.txtNumeroCuenta.text.toString().toLong()
@@ -26,6 +28,7 @@ class RegistrarAlumnoViewModel : ViewModel() {
         val intent = Intent(fragment.context, MainActivity::class.java)
         intent.putExtra("Alumnos",listaAlumnos)
         intent.putExtra("Clases",listaClases)
+        intent.putExtra("Matricula", listaMatricula)
         fragment.startActivity(intent)
     }
     fun recibirInformacion(fragment: RegistrarAlumnoFragment){
@@ -35,6 +38,9 @@ class RegistrarAlumnoViewModel : ViewModel() {
         }
         if(fragment.requireActivity().intent.getParcelableArrayListExtra<Alumno>("Clases") != null){
             listaClases = intent.getParcelableArrayListExtra("Clases")!!
+        }
+        if(fragment.requireActivity().intent.getParcelableArrayListExtra<Clase>("Matricula") != null){
+            listaMatricula = intent.getParcelableArrayListExtra("Matricula")!!
         }
     }
     fun dialogo(alumno: Alumno,fragment: RegistrarAlumnoFragment){

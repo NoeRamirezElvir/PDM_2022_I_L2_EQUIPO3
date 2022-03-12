@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrarMatriculaActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.PDM_2022_I_L2_EQUIPO3.AppBarOverlay"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Matricula"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.PDM_2022_I_L2_EQUIPO3.PopupOverlay"  />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <View
+        android:id="@+id/topView"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/matricula"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="150dp"
+        app:layout_anchorGravity="top|center"
+
+        />
+
+    <TextView
+        android:layout_width="65dp"
+        android:layout_height="20dp"
+        android:text="Alumno:"
+        android:textStyle="bold"
+        android:layout_marginTop="195dp"
+        android:layout_marginLeft="65dp"/>
+
+    <Spinner
+        android:id="@+id/spnAlumno"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="180dp" />
+
+    <TextView
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginLeft="5dp"
+        android:text="Clase a Matricular:"
+        android:textStyle="bold"/>
+    <Spinner
+        android:id="@+id/spnClases"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="242dp"
+        android:layout_marginLeft="135dp"
+        />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF6E41"
+        android:clickable="true"
+        app:layout_anchor="@+id/topView"
+        app:layout_anchorGravity="bottom|right"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/ic_add_entry" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_registrar_matricula"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="60dp"
+        >
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="Guardar"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:backgroundTint="#FF6E41"
+            />
+
+        <Button
+            android:id="@+id/btnCorreo"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Mandar al Correo"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:backgroundTint="#FF6E41"
+            />
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

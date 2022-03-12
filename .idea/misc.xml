@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/drawable/custom_button_alumno.xml" value="0.117" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/drawable/gradient.xml" value="0.125" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/activity_registrar_matricula.xml" value="0.14" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/content_registrar_matricula.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/fragment_first.xml" value="0.16576086956521738" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/fragment_second.xml" value="0.1693840579710145" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/registrar_alumno__activity.xml" value="0.1286231884057971" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/registrar_alumno__fragment.xml" value="0.12" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/registrar_clase_activity.xml" value="0.1286231884057971" />
+        <entry key="..\:/Users/juan_/AndroidStudioProjects/PDM_2022_I_L2_EQUIPO3/app/src/main/res/layout/registrar_clase_fragment.xml" value="0.2" />
         <entry key="..\:/Users/nblad/Desktop/Laboratorio 2/app/src/main/res/drawable/custom_buttom_alumno.xml" value="0.2075" />
         <entry key="..\:/Users/nblad/Desktop/Laboratorio 2/app/src/main/res/drawable/custom_button_alumno.xml" value="0.1085" />
         <entry key="..\:/Users/nblad/Desktop/Laboratorio 2/app/src/main/res/layout/activity_main.xml" value="0.33" />

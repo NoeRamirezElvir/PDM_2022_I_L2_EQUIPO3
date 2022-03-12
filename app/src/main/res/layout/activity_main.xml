@@ -39,4 +39,22 @@
         app:layout_constraintTop_toBottomOf="@+id/btnRegistrarAlumnoM"
         tools:ignore="RtlHardcoded,TextContrastCheck" />
 
+    <Button
+        android:id="@+id/btnRegistrarMatricula"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="315dp"
+        android:background="#D64BB6B6"
+        android:drawableLeft="@drawable/registrar_matricula"
+        android:text="Realizar matrícula"
+        android:textColor="@color/black"
+        app:backgroundTint="@null"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegistrarClaseM"
+        tools:ignore="RtlHardcoded,TextContrastCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

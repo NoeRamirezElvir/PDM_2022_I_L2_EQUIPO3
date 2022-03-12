@@ -8,12 +8,14 @@ import hn.edu.ujcv.pdm_2022_i_l2_equipo3.MainActivity
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.R
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Alumno
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Clase
+import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Matricula
 import kotlinx.android.synthetic.main.registrar_clase_fragment.*
 import kotlin.IllegalArgumentException
 
 class RegistrarClaseViewModel : ViewModel() {
     var listaClases = ArrayList<Clase>()
     var listaAlumnos:ArrayList<Alumno>? = ArrayList()
+    var listaMatricula:ArrayList<Matricula>? = ArrayList()
 
     fun registrarClase(fragment: RegistrarClaseFragment){
         val codigo   =  fragment.txtCodigo.text.toString()
@@ -29,6 +31,7 @@ class RegistrarClaseViewModel : ViewModel() {
         val intent = Intent(fragment.context, MainActivity::class.java)
         intent.putExtra("Clases",listaClases)
         intent.putExtra("Alumnos",listaAlumnos)
+        intent.putExtra("Matricula", listaMatricula)
         fragment.startActivity(intent)
     }
     fun recibirInformacion(fragment: RegistrarClaseFragment){
@@ -38,6 +41,9 @@ class RegistrarClaseViewModel : ViewModel() {
         }
         if(fragment.requireActivity().intent.getParcelableArrayListExtra<Clase>("Alumnos") != null){
             listaAlumnos = intent.getParcelableArrayListExtra("Alumnos")!!
+        }
+        if(fragment.requireActivity().intent.getParcelableArrayListExtra<Clase>("Matricula") != null){
+            listaMatricula = intent.getParcelableArrayListExtra("Matricula")!!
         }
 
     }
