@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Alumno
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Clase
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Matricula
+import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Notas
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.ui.registraralumno.RegistrarAlumnoFragment
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.ui.registrarclase.RegistrarClaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     var listaAlumnos:ArrayList<Alumno>? = ArrayList()
     var listaClases:ArrayList<Clase>?   = ArrayList()
     var listaMatricula:ArrayList<Matricula>? = ArrayList()
+    var listaNotas:ArrayList<Notas>? =ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +38,12 @@ class MainActivity : AppCompatActivity() {
         btnRegistrarMatricula.setOnClickListener {
             enviarListasMatricula()
         }
+        btnIngresarNotasP.setOnClickListener {
+            enviarListasNotas()
+        }
 
     }
+
     //Llenar las listas
     private fun inicio(){
         val intent = intent
@@ -92,6 +98,25 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("Clases", listaClases)
             intent.putExtra("Alumnos", listaAlumnos)
             intent.putExtra("Matricula", listaMatricula)
+            startActivity(intent)
+        }
+    }
+
+    private fun enviarListasNotas() {
+        if(listaMatricula.isNullOrEmpty()){
+            val cancelDialog = AlertDialog.Builder(this)
+                .setTitle("No hay Matriculas registradas")
+                .setMessage("Falta de información")
+                .setIcon(R.drawable.icono_cancelar)
+                .setPositiveButton("Aceptar"){_,_ ->
+                }.create()
+            cancelDialog.show()
+        }else{
+            val intent = Intent(this, IngresarNotas::class.java)
+            intent.putExtra("Clases", listaClases)
+            intent.putExtra("Alumnos", listaAlumnos)
+            intent.putExtra("Matricula", listaMatricula)
+            intent.putExtra("Notas",listaNotas)
             startActivity(intent)
         }
     }

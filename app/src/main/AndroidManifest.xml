@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PDM_2022_I_L2_EQUIPO3">
         <activity
+            android:name=".IngresarNotas"
+            android:exported="false"
+            android:label="@string/title_activity_ingresar_notas"
+            android:theme="@style/Theme.PDM_2022_I_L2_EQUIPO3.NoActionBar" />
+        <activity
             android:name=".RegistrarMatriculaActivity"
             android:exported="false"
             android:label="@string/title_activity_registrar_matricula"
