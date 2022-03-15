@@ -10,7 +10,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.FragmentManager
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.R
+import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.TimePickerFragment
 import kotlinx.android.synthetic.main.registrar_clase_fragment.*
 
 class RegistrarClaseFragment : Fragment() {
@@ -20,6 +22,8 @@ class RegistrarClaseFragment : Fragment() {
     }
 
     lateinit var viewModel: RegistrarClaseViewModel
+    var hora: Int = 0
+    var minuto: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,12 +37,7 @@ class RegistrarClaseFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(RegistrarClaseViewModel::class.java)
         viewModel.recibirInformacion(this@RegistrarClaseFragment)
 
-        //spinner
-        val spinner = spnHora
-        val lista = resources.getStringArray(R.array.spinner)
-        val adaptador = ArrayAdapter(this.requireContext(), android.R.layout.simple_spinner_item, lista)
-        spinner.adapter = adaptador
-
+        //Time Picker
         //Validaciones
         txtCodigo.doAfterTextChanged {
             txtCodigo.error = viewModel.Validaciones().validarCodigo(this@RegistrarClaseFragment)
@@ -49,11 +48,9 @@ class RegistrarClaseFragment : Fragment() {
         txtSeccion.doAfterTextChanged {
             txtSeccion.error = viewModel.Validaciones().validarSeccion(this@RegistrarClaseFragment)
         }
+        txtHora.setOnClickListener { timePicker(this@RegistrarClaseFragment) }
         txtHora.doAfterTextChanged {
             txtHora.error = viewModel.Validaciones().validarHora(this@RegistrarClaseFragment)
-        }
-        txtMinutos.doAfterTextChanged {
-            txtMinutos.error = viewModel.Validaciones().validarMinutos(this@RegistrarClaseFragment)
         }
         txtEdificio.doAfterTextChanged {
             txtEdificio.error = viewModel.Validaciones().validarEdificio(this@RegistrarClaseFragment)
@@ -79,7 +76,14 @@ class RegistrarClaseFragment : Fragment() {
             }
         }
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,callback)
+    }
+    private fun timePicker(fragment: RegistrarClaseFragment){
+        val timePicker =TimePickerFragment { onTimeSelected(it, fragment) }
+        timePicker.show(this.childFragmentManager,"time")
+    }
 
+    private fun onTimeSelected(time: String,fragment: RegistrarClaseFragment) {
+        fragment.txtHora.setText(time)
     }
 
 }

@@ -1,8 +1,14 @@
 package hn.edu.ujcv.pdm_2022_i_l2_equipo3.ui.registrarclase
 
 import android.app.AlertDialog
+import android.app.Dialog
+import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.os.Bundle
+import android.widget.TimePicker
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModel
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.MainActivity
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.R
@@ -10,7 +16,9 @@ import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Alumno
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Clase
 import hn.edu.ujcv.pdm_2022_i_l2_equipo3.clases.Matricula
 import kotlinx.android.synthetic.main.registrar_clase_fragment.*
+import java.util.*
 import kotlin.IllegalArgumentException
+import kotlin.collections.ArrayList
 
 class RegistrarClaseViewModel : ViewModel() {
     var listaClases = ArrayList<Clase>()
@@ -21,7 +29,7 @@ class RegistrarClaseViewModel : ViewModel() {
         val codigo   =  fragment.txtCodigo.text.toString()
         val nombre   = fragment.txtNombreClase.text.toString()
         val seccion  = fragment.txtSeccion.text.toString()
-        val hora     = "${fragment.txtHora.text}:${fragment.txtMinutos.text} ${fragment.spnHora.selectedItem}"
+        val hora     = fragment.txtHora.text.toString()
         val edificio = fragment.txtEdificio.text.toString()
         val aula     = fragment.txtAula.text.toString()
         dialogo(Clase(codigo, nombre, seccion, hora, edificio, aula),fragment)
@@ -133,40 +141,6 @@ class RegistrarClaseViewModel : ViewModel() {
                 if(fragment.txtHora.text.toString().isEmpty()){
                     throw IllegalArgumentException("La hora es muy corta")
                 }
-                if(fragment.txtHora.text.toString().length > 2){
-                    throw IllegalArgumentException("La hora es muy larga")
-                }
-                if(fragment.txtHora.text.toString().toInt() < 0){
-                    throw IllegalArgumentException("El formato de hora es invalido")
-                }
-                if(fragment.txtHora.text.toString().toInt() > 12){
-                    throw IllegalArgumentException("El formato de hora es invalido")
-                }
-            }catch (e:IllegalArgumentException){
-                mensaje = e.message
-            }
-            finally {
-                return mensaje
-            }
-        }
-        fun validarMinutos(fragment: RegistrarClaseFragment):String?{
-            var mensaje:String? = null
-            try{
-                if(fragment.txtMinutos.text.isNullOrEmpty()){
-                    throw IllegalArgumentException("Los minutos están vacíos")
-                }
-                if(fragment.txtMinutos.text.toString().length < 2){
-                    throw IllegalArgumentException("Los minutos son invalidos")
-                }
-                if(fragment.txtMinutos.text.toString().length > 2 ){
-                    throw IllegalArgumentException("Los minutos exceden el límite")
-                }
-                if(fragment.txtMinutos.text.toString().toInt() < 0){
-                    throw IllegalArgumentException("El formato de hora es invalido")
-                }
-                if(fragment.txtMinutos.text.toString().toInt() > 59){
-                    throw IllegalArgumentException("El formato de hora es invalido")
-                }
             }catch (e:IllegalArgumentException){
                 mensaje = e.message
             }
@@ -226,14 +200,6 @@ class RegistrarClaseViewModel : ViewModel() {
             fragment.txtSeccion.text.toString().length > 2 -> false
             fragment.txtHora.text.isNullOrEmpty() -> false
             fragment.txtHora.text.toString().isEmpty() -> false
-            fragment.txtHora.text.toString().length > 2 -> false
-            fragment.txtHora.text.toString().toInt() < 0 -> false
-            fragment.txtHora.text.toString().toInt() >12 -> false
-            fragment.txtMinutos.text.isNullOrEmpty() -> false
-            fragment.txtMinutos.text.toString().length < 2 -> false
-            fragment.txtMinutos.text.toString().length > 2 -> false
-            fragment.txtMinutos.text.toString().toInt() < 0 -> false
-            fragment.txtMinutos.text.toString().toInt() >59 -> false
             fragment.txtEdificio.text.isNullOrEmpty() -> false
             fragment.txtEdificio.text.toString().length < 3 -> false
             fragment.txtEdificio.text.toString().length > 50 -> false
@@ -243,4 +209,5 @@ class RegistrarClaseViewModel : ViewModel() {
             else -> true
         }
     }
+
 }

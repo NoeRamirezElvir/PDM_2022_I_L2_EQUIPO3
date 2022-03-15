@@ -134,7 +134,7 @@
                 <ImageView
                     android:id="@+id/ivhora"
                     android:layout_marginStart="50dp"
-                    android:layout_width="0dp"
+                    android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:src="@drawable/ic_hora"
@@ -142,40 +142,21 @@
 
                 <EditText
                     android:id="@+id/txtHora"
-                    android:layout_width="69dp"
-                    android:layout_marginEnd="9dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:layout_marginStart="3dp"
-                    android:inputType="number"
-                    android:hint="@string/hh"
-                    android:minHeight="48dp"
-                    android:textColorHint="#ED011818"
-                    android:background="#D6B1D2D2"
-                    android:importantForAutofill="no" />
-
-                <EditText
-                    android:id="@+id/txtMinutos"
-                    android:layout_width="69dp"
-                    android:layout_marginEnd="9dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:layout_marginStart="3dp"
-                    android:inputType="number"
-                    android:hint="@string/mm"
-                    android:minHeight="48dp"
-                    android:textColorHint="#ED011818"
-                    android:background="#D6B1D2D2"
-                    android:importantForAutofill="no" />
-
-                <Spinner
-                    android:id="@+id/spnHora"
-                    android:layout_width="69dp"
-                    android:layout_height="48dp"
                     android:layout_marginEnd="80dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="3dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:editable="false"
+                    android:inputType="number"
+                    android:hint="@string/seleccione_la_hora"
+                    android:minHeight="48dp"
+                    android:textColorHint="#ED011818"
                     android:background="#D6B1D2D2"
-                    android:autofillHints="a.m."
-                    tools:ignore="SpeakableTextPresentCheck" />
+                    android:importantForAutofill="no"
+                    tools:ignore="Deprecated" />
             </LinearLayout>
 
             <LinearLayout
